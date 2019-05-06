@@ -1,113 +1,43 @@
 import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
+import { User, Activity, Play, Layers } from "react-feather";
 
 export default class Navigation extends Component {
+  state = {
+    navOpen: false
+  };
+
+  closeMenu = () => {
+    this.setState({
+      navOpen: false
+    });
+  };
   render() {
+    const { navOpen } = this.state;
     return (
       <Fragment>
-        <nav>
+        <nav className={this.state.navOpen ? "open" : ""}>
           <ul>
             <li>
-              <NavLink
-                onClick={this.closeMenu}
-                exact
-                to={this.props.language === "nordic" ? "/nordic/" : "/"}
-              >
-                Home
+              <NavLink onClick={this.closeMenu} exact to={"/account"}>
+                <User /> {navOpen ? "Account" : ""}
               </NavLink>
             </li>
             <li>
-              <NavLink
-                onClick={this.closeMenu}
-                exact
-                to={
-                  this.props.language === "nordic" ? "/nordic/about" : "/about"
-                }
-              >
-                About Us
+              <NavLink onClick={this.closeMenu} exact to={"/logs"}>
+                <Activity /> {navOpen ? "Logs" : ""}
               </NavLink>
             </li>
             <li>
-              <NavLink
-                onClick={this.closeMenu}
-                exact
-                to={
-                  this.props.language === "nordic"
-                    ? "/nordic/products"
-                    : "/products"
-                }
-              >
-                Products
+              <NavLink onClick={this.closeMenu} exact to={"/runs"}>
+                <Play /> {navOpen ? "Runs" : ""}
               </NavLink>
             </li>
             <li>
-              <NavLink
-                onClick={this.closeMenu}
-                exact
-                to={
-                  this.props.language === "nordic"
-                    ? "/nordic/recipes"
-                    : "/recipes"
-                }
-              >
-                Recipes
+              <NavLink onClick={this.closeMenu} exact to={"/runs"}>
+                <Layers /> {navOpen ? "Subsystem overview" : ""}
               </NavLink>
             </li>
-            {/* <li>
-            <NavLink onClick={this.closeMenu} exact to="/faq">
-              FAQ
-            </NavLink>
-          </li> */}
-            <li>
-              <NavLink
-                onClick={this.closeMenu}
-                exact
-                to={
-                  this.props.language === "nordic"
-                    ? "/nordic/contact"
-                    : "/contact"
-                }
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                onClick={this.closeMenu}
-                exact
-                to={
-                  this.props.language === "nordic"
-                    ? "/nordic/imprint"
-                    : "/imprint"
-                }
-              >
-                Imprint
-              </NavLink>
-            </li>
-            {/* <li>
-            <NavLink onClick={this.closeMenu} exact to="/media">
-              Media
-            </NavLink>
-          </li> */}
-
-            <li>
-              <a
-                href="https://www.heristo.de/agb.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Conditions
-              </a>
-            </li>
-            {/* <li>
-              <a
-                href="https://www.tofukind.com/de/like-meat/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Shop
-              </a>
-            </li> */}
           </ul>
         </nav>
       </Fragment>
