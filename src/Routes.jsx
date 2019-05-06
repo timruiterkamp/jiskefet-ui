@@ -8,11 +8,12 @@ import Log from "./pages/Log";
 import Navigation from "./components/composites/Navigation";
 import AccountPage from "./pages/AccountPage";
 import "./scss/navigation/index.scss";
+import PageWrapper from "./components/composites/PageWrapper";
 
 export default class Routes extends Component {
   render() {
     return (
-      <Fragment>
+      <PageWrapper>
         <Navigation />
         <Switch>
           <Route path="/account" component={AccountPage} />
@@ -22,7 +23,7 @@ export default class Routes extends Component {
           <Route path="/subsystem-overview" component={Subsystems} />
           <Route path="/" component={LoginPage} />
         </Switch>
-      </Fragment>
+      </PageWrapper>
     );
   }
 }
