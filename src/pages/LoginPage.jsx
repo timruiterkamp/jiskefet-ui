@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
 
 export default class LoginPage extends Component {
   render() {
-    return <div>test</div>;
+    return <Button variant="warning">Primary</Button>;
   }
 }
