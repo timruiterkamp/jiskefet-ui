@@ -21,7 +21,10 @@ class Logs extends Component {
 
         <div className="log-content">
           <Container className="log-container">
-            <article>asdf</article>
+            <article>
+              <header>header</header>
+              <main>asdf</main>
+            </article>
           </Container>
         </div>
       </div>
