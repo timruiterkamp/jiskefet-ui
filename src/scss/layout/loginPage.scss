@@ -19,6 +19,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes wave-2 {
