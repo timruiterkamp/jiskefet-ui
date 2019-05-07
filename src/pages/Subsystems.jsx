@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { connect } from "react-redux";
+import { setLoggedInData } from "../store/reducers/data/DataActions";
 
-export default class Subsystems extends Component {
+class Subsystems extends Component {
+  componentDidMount = () => {
+    this.props.setLoggedInData();
+  };
   render() {
     return (
       <Container>
@@ -14,3 +16,14 @@ export default class Subsystems extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {
+  setLoggedInData
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Subsystems);

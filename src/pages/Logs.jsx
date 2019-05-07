@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
+import { connect } from "react-redux";
+import { setLoggedInData } from "../store/reducers/data/DataActions";
 
-import "../scss/layout/logs.scss";
-
-export default class Logs extends Component {
+class Logs extends Component {
+  componentDidMount = () => {
+    this.props.setLoggedInData();
+  };
   render() {
     return (
       <div className="content">
@@ -53,3 +56,13 @@ export default class Logs extends Component {
     );
   }
 }
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {
+  setLoggedInData
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Logs);
