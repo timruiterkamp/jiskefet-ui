@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 import { connect } from "react-redux";
 import { setLoggedInData } from "../store/reducers/data/DataActions";
 
