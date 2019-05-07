@@ -16,9 +16,9 @@ class LoginPage extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Welcome to Jiskefet</h1>
+        <section className="login-screen">
+          <h1>Welcome to Jiskefet</h1>
 
-        <section>
           <p>Please use your github account to sign in</p>
           <Link to={"/logs"} onClick={this.setLoggedInState}>
             <Button variant="primary">Log in</Button>
