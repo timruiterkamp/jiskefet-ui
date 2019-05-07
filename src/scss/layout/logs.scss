@@ -1,6 +1,8 @@
 .content {
   display: block;
   width: 100%;
+
+  background-color: #1e1e1e;
 }
 
 .log {
@@ -24,7 +26,13 @@
     article {
       height: 250px;
       width: 100%;
-      background-color: red;
+      background-color: #34404e;
+      border-radius: 1rem;
+      padding: 1rem;
+
+      p {
+        color: #fff;
+      }
     }
   }
 }
