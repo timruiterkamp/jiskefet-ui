@@ -20,12 +20,14 @@ class LoginPage extends Component {
           <h1>Welcome to Jiskefet</h1>
 
           <p>Please use your github account to sign in</p>
-          <Link to={"/logs"} onClick={this.setLoggedInState}>
-            <Button variant="primary">Log in</Button>
-          </Link>
-          <Button variant="secondary" href="https://github.com/">
-            Create account
-          </Button>
+          <div className="">
+            <Link to={"/logs"} onClick={this.setLoggedInState}>
+              <Button variant="primary">Log in</Button>
+            </Link>
+            <Button variant="secondary" href="https://github.com/">
+              Create account
+            </Button>
+          </div>
         </section>
         <svg
           className="svg-3"
