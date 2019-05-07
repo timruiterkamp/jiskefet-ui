@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import LoginPage from "./pages/LoginPage";
 import Subsystems from "./pages/Subsystems";
 import Runs from "./pages/Runs";
@@ -9,12 +10,14 @@ import Navigation from "./components/composites/Navigation";
 import AccountPage from "./pages/AccountPage";
 import "./scss/navigation/index.scss";
 import PageWrapper from "./components/composites/PageWrapper";
+import { loggedInState } from "./store/reducers/data/DataSelectors";
 
-export default class Routes extends Component {
+class Routes extends Component {
   render() {
     return (
       <PageWrapper>
-        <Navigation />
+        {this.props.loggedIn ? <Navigation /> : ""}
+
         <Switch>
           <Route path="/account" component={AccountPage} />
           <Route path="/logs" component={Logs} />
@@ -27,3 +30,14 @@ export default class Routes extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  loggedIn: loggedInState(state)
+});
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Routes);

@@ -5,8 +5,13 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
+import { setLoggedInData } from "../store/reducers/data/DataActions";
+import { connect } from "react-redux";
 
-export default class Logs extends Component {
+class Logs extends Component {
+  componentDidMount = () => {
+    this.props.setLoggedInData();
+  };
   render() {
     return (
       <Container>
@@ -33,3 +38,13 @@ export default class Logs extends Component {
     );
   }
 }
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {
+  setLoggedInData
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Logs);
