@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 import { connect } from "react-redux";
 import { setLoggedInData } from "../store/reducers/data/DataActions";
 
@@ -7,7 +9,13 @@ class Subsystems extends Component {
     this.props.setLoggedInData();
   };
   render() {
-    return <div>subsystems</div>;
+    return (
+      <Container>
+        <Row>
+          <h1>Subsystem overview</h1>
+        </Row>
+      </Container>
+    );
   }
 }
 
