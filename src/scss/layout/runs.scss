@@ -1,0 +1,19 @@
+@import "../config/colors.scss";
+
+.runs {
+  // margin-left: 75px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+    background-color: $slightlyLighterBlack;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      width: 200px;
+    }
+  }
+}
