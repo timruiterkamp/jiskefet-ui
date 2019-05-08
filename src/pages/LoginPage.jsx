@@ -1,12 +1,10 @@
 import React, { Component, Fragment } from "react";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
-import Row from "react-bootstrap/Row";
 import { connect } from "react-redux";
 import { setLoggedInData } from "../store/reducers/data/DataActions";
-import Col from "react-bootstrap/Col";
 import "../scss/layout/loginPage.scss";
+import { GitHub, LogIn } from "react-feather";
 
 class LoginPage extends Component {
   setLoggedInState = () => {
@@ -17,15 +15,26 @@ class LoginPage extends Component {
     return (
       <Fragment>
         <section className="login-screen">
-          <h1>Welcome to Jiskefet</h1>
+          <h3>Welcome to</h3>
+          <h1>Jiskefet</h1>
 
           <p>Please use your github account to sign in</p>
-          <Link to={"/logs"} onClick={this.setLoggedInState}>
-            <Button variant="primary">Log in</Button>
-          </Link>
-          <Button variant="secondary" href="https://github.com/">
-            Create account
-          </Button>
+          <div className="login-buttons">
+            <Link to={"/logs"} onClick={this.setLoggedInState}>
+              <Button className="login-button" variant="primary">
+                <LogIn />
+                Log in
+              </Button>
+            </Link>
+            <Button
+              className="login-button"
+              variant="outline-light"
+              href="https://github.com/"
+            >
+              <GitHub />
+              Create account
+            </Button>
+          </div>
         </section>
         <svg
           className="svg-3"

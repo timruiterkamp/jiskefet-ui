@@ -1,3 +1,5 @@
+@import "../config/colors.scss";
+
 .svg-3 path {
   animation: 20s wave-2 linear infinite alternate;
 }
@@ -11,14 +13,54 @@
   position: absolute;
 }
 
-.login-screen {
-  width: 50vw;
-  height: 50vh;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.login {
+  &-screen {
+    width: 50vw;
+    height: 40vh;
+    background-color: $slightlyLighterBlack;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    // box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+
+    h3 {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-top: -1.2rem;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+    padding-top: 40px;
+  }
+
+  &-button {
+    min-width: 250px;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    position: relative;
+
+    svg {
+      position: absolute;
+      left: 25px;
+    }
+  }
 }
 
 @keyframes wave-2 {
