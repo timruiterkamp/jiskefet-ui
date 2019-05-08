@@ -12,10 +12,21 @@ function setLoggedIn(value) {
   };
 }
 
+function setPushNotification(value) {
+  return {
+    type: "SET_PUSH_NOTIFICATION",
+    value
+  };
+}
 export const setLoadingData = () => dispatch => {
   dispatch(setLoading(true));
 };
 
 export const setLoggedInData = () => dispatch => {
   dispatch(setLoggedIn(true));
+};
+
+export const setPushNotificationData = data => dispatch => {
+  console.log(data);
+  dispatch(setPushNotification(data));
 };

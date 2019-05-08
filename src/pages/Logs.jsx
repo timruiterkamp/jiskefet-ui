@@ -6,8 +6,12 @@ import Row from "react-bootstrap/Row";
 import CardSingle from "../components/composites/card";
 import TableSingle from "../components/logs/Table";
 import { connect } from "react-redux";
-import { setLoggedInData } from "../store/reducers/data/DataActions";
+import {
+  setLoggedInData,
+  setPushNotificationData
+} from "../store/reducers/data/DataActions";
 import "../scss/layout/logs.scss";
+import PushNotification from "../components/composites/PushNotification";
 
 class Logs extends Component {
   state = {
@@ -17,6 +21,10 @@ class Logs extends Component {
   };
   componentDidMount = () => {
     this.props.setLoggedInData();
+    let self = this;
+    setInterval(() => {
+      self.props.setPushNotificationData({ message: Math.random(0, 1) });
+    }, 1000);
   };
 
   handleView = () => {
@@ -33,17 +41,18 @@ class Logs extends Component {
       <div className="content">
         <div className="log-header">
           <Container>
+            <PushNotification />
             <Link to="/create-logs">
               <Button variant="outline-light">Create new log</Button>
             </Link>
             <Button variant="success" onClick={this.openFilters}>
               Open filters
             </Button>
-            <div className="filters">
+            {/* <div className="filters">
               <Container>
                 <h1>test</h1>
               </Container>
-            </div>
+            </div> */}
           </Container>
         </div>
 
@@ -79,7 +88,8 @@ class Logs extends Component {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = {
-  setLoggedInData
+  setLoggedInData,
+  setPushNotificationData
 };
 
 export default connect(
