@@ -1,0 +1,13 @@
+@import "../config/colors.scss";
+
+header {
+  margin-left: 75px;
+  padding: 2rem 0;
+  width: 100%;
+  background-color: $slightlyLighterBlack;
+  color: $white;
+  textarea {
+    width: 100%;
+    min-height: 20rem;
+  }
+}
