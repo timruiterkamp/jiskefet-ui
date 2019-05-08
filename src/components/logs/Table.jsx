@@ -25,7 +25,7 @@ export default function TableSingle() {
               <tr>
                 <td>144</td>
                 <td>
-                  Faucibus orci luctus et ultrices posuere cubilia curae donec
+                  Faucidbus orci luctus et ultrices posuere cubilia curae donec
                   pharetra magna vestibulum aliquet ultrices erat
                 </td>
                 <td>
