@@ -1,6 +1,7 @@
 const initialState = {
   loading: false,
-  loggedIn: false
+  loggedIn: false,
+  pushNotification: null
 };
 
 export const DataReducer = (state = initialState, action) => {
@@ -14,6 +15,11 @@ export const DataReducer = (state = initialState, action) => {
       return {
         ...state,
         loggedIn: action.value
+      };
+    case "SET_PUSH_NOTIFICATION":
+      return {
+        ...state,
+        pushNotification: action.value
       };
     default:
       return state;
