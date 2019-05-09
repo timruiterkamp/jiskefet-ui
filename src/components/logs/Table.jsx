@@ -10,7 +10,7 @@ export default function TableSingle() {
     <React.Fragment>
       <div>
         <Col sm={12}>
-          <Table striped bordered hover size="sm">
+          <Table striped bordered responsive size="sm">
             <thead>
               <tr>
                 <th>Log id</th>

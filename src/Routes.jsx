@@ -12,6 +12,7 @@ import AccountPage from "./pages/AccountPage";
 import "./scss/navigation/index.scss";
 import PageWrapper from "./components/composites/PageWrapper";
 import { loggedInState } from "./store/reducers/data/DataSelectors";
+import Compare from "./pages/Compare";
 
 class Routes extends Component {
   render() {
@@ -26,6 +27,7 @@ class Routes extends Component {
           <Route path="/logs:id" component={Log} />
           <Route path="/runs" component={Runs} />
           <Route path="/subsystem-overview" component={Subsystems} />
+          <Route path="/compare" component={Compare} />
           <Route path="/" component={LoginPage} />
         </Switch>
       </PageWrapper>
