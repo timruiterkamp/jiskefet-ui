@@ -1,7 +1,7 @@
 const initialState = {
   loading: false,
   loggedIn: false,
-  compareItems: []
+  compareItems: [],
   pushNotification: null
 };
 
