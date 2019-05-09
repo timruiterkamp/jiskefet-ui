@@ -23,14 +23,12 @@ class PushNotification extends Component {
   };
   render() {
     return (
-      <div className="element">
-        {this.state.showPopUp && (
-          <div className="pushNotification">
-            {this.props.notification && (
-              <p>{this.props.notification.message}</p>
-            )}
-          </div>
-        )}
+      <div
+        className={this.props.notification ? "pop-up element" : "element hide"}
+      >
+        <div className="pushNotification">
+          {this.props.notification && <p>{this.props.notification.message}</p>}
+        </div>
       </div>
     );
   }

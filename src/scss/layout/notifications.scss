@@ -1,11 +1,32 @@
 @import "../config/colors.scss";
 
 .pushNotification {
-  position: absolute;
-  bottom: 10px;
+  background-color: tomato;
+  height: 50px;
+  width: auto;
+  padding: 1rem;
+  color: white;
+}
+
+.pop-up {
+  display: block;
+  animation: 0.3s ease-in-out forwards;
+  position: fixed;
+  // bottom: -100vh;
   right: 10px;
-  background-color: #fff;
-  border: 2px solid $lightBlack;
-  height: 200px;
-  width: 300px;
+}
+
+@keyframes popUp {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+}
+
+.hide {
+  display: none;
 }
