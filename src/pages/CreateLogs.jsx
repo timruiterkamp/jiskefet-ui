@@ -13,7 +13,7 @@ export default class CreateLogs extends Component {
   render() {
     return (
       <React.Fragment>
-        <header>
+        <header className="create-log-header">
           <Container>
             <Row>
               <Col sm={12}>

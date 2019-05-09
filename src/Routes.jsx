@@ -14,6 +14,7 @@ import PageWrapper from "./components/composites/PageWrapper";
 import { loggedInState } from "./store/reducers/data/DataSelectors";
 import { setPushNotificationData } from "./store/reducers/data/DataActions";
 import PushNotification from "./components/composites/PushNotification";
+import Compare from "./pages/Compare";
 
 class Routes extends Component {
   componentDidMount = () => {
@@ -37,6 +38,7 @@ class Routes extends Component {
           <Route path="/logs:id" component={Log} />
           <Route path="/runs" component={Runs} />
           <Route path="/subsystem-overview" component={Subsystems} />
+          <Route path="/compare" component={Compare} />
           <Route path="/" component={LoginPage} />
         </Switch>
 

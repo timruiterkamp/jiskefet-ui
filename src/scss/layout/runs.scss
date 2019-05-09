@@ -16,4 +16,35 @@
       width: 200px;
     }
   }
+
+  &-results {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    li {
+      margin: 0 1rem;
+      text-align: left;
+    }
+  }
+
+  &-table {
+    color: white;
+    // border-collapse: collapse;
+    // width: 100%;
+    // background-color: white;
+    // overflow: scroll;
+
+    // td,
+    // th {
+    //   border: 1px solid #3a3a3a;
+    //   text-align: left;
+    //   padding: 8px;
+    // }
+
+    // tr:nth-child(even) {
+    //   background-color: #dddddd;
+    // }
+  }
 }
