@@ -12,6 +12,12 @@ function setLoggedIn(value) {
   };
 }
 
+function setPushNotification(value) {
+  return {
+    type: "SET_PUSH_NOTIFICATION",
+    value
+  };
+}
 function setCompareItems(value) {
   return {
     type: "SET_COMPARE_ITEMS",
@@ -30,4 +36,9 @@ export const setLoggedInData = () => dispatch => {
 export const setCompareItemsData = item => dispatch => {
   console.log(item);
   dispatch(setCompareItems(item));
+};
+
+export const setPushNotificationData = data => dispatch => {
+  console.log(data);
+  dispatch(setPushNotification(data));
 };

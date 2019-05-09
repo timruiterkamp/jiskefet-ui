@@ -12,9 +12,18 @@ import AccountPage from "./pages/AccountPage";
 import "./scss/navigation/index.scss";
 import PageWrapper from "./components/composites/PageWrapper";
 import { loggedInState } from "./store/reducers/data/DataSelectors";
+import { setPushNotificationData } from "./store/reducers/data/DataActions";
+import PushNotification from "./components/composites/PushNotification";
 import Compare from "./pages/Compare";
 
 class Routes extends Component {
+  componentDidMount = () => {
+    let self = this;
+    setInterval(() => {
+      self.props.setPushNotificationData({ message: Math.random(0, 1) });
+    }, 1000);
+  };
+
   render() {
     return (
       <PageWrapper>
@@ -30,6 +39,8 @@ class Routes extends Component {
           <Route path="/compare" component={Compare} />
           <Route path="/" component={LoginPage} />
         </Switch>
+
+        <PushNotification />
       </PageWrapper>
     );
   }
@@ -39,7 +50,9 @@ const mapStateToProps = state => ({
   loggedIn: loggedInState(state)
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  setPushNotificationData
+};
 
 export default connect(
   mapStateToProps,

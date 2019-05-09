@@ -9,3 +9,7 @@ export const loadingState = state => {
 export const compareItemsState = state => {
   return state.data.compareItems;
 };
+
+export const pushNotificationState = state => {
+  return state.data.pushNotification;
+};

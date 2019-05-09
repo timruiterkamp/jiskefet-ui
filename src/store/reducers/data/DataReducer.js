@@ -2,6 +2,7 @@ const initialState = {
   loading: false,
   loggedIn: false,
   compareItems: []
+  pushNotification: null
 };
 
 export const DataReducer = (state = initialState, action) => {
@@ -15,6 +16,11 @@ export const DataReducer = (state = initialState, action) => {
       return {
         ...state,
         loggedIn: action.value
+      };
+    case "SET_PUSH_NOTIFICATION":
+      return {
+        ...state,
+        pushNotification: action.value
       };
     case "SET_COMPARE_ITEMS":
       return {
