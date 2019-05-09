@@ -1,0 +1,11 @@
+@import "../config/colors.scss";
+
+.pushNotification {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #fff;
+  border: 2px solid $lightBlack;
+  height: 200px;
+  width: 300px;
+}
