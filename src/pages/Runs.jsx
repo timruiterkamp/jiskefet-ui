@@ -83,6 +83,7 @@ class Runs extends Component {
                   <tr key={index}>
                     <td>
                       <input
+                        className="styled-checkbox"
                         type="checkbox"
                         onClick={() => this.compareItem(item)}
                       />

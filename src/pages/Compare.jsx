@@ -3,66 +3,83 @@ import { connect } from "react-redux";
 import { compareItemsState } from "../store/reducers/data/DataSelectors";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/Table";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+
 import "../scss/layout/compare.scss";
 
 class Compare extends Component {
   render() {
-    console.log(this.props.data);
     return (
-      <section className="content compare">
-        <header className="runs-header header">
-          <Link to="/runs">
-            <Button variant="outline-light">Runs</Button>
-          </Link>
-        </header>
-        <ul>
-          <li>Run number</li>
-          <li>
-            Time O<sub>2</sub> start
-          </li>
-          <li>
-            Time O<sub>2</sub> end
-          </li>
-          <li>Time TRG start</li>
-          <li>Time TRG end</li>
-          <li>ID</li>
-          <li>Run type</li>
-          <li>Run quality</li>
-          <li>Detectors</li>
-          <li>FLP's'</li>
-          <li>EPN</li>
-          <li>Timeframe</li>
-          <li>subtimeframes</li>
-          <li>B read out</li>
-        </ul>
-        {this.props.data ? (
-          this.props.data.map((item, index) => (
-            <ul key={index}>
-              <li>{item.run_number ? item.run_number : "NA"}</li>
-              <li>{item.time02start ? item.time02start : "NA"}</li>
-              <li>{item.time02end ? item.time02end : "NA"}</li>
-              <li>{item.timetrgstart ? item.timetrgstart : "NA"}</li>
-              <li>{item.timetrgend ? item.timetrgend : "NA"}</li>
-              <li>{item.id ? item.id : "NA"}</li>
-              <li>{item.run_type ? item.run_type : "NA"}</li>
-              <li>{item.quality ? item.quality : "NA"}</li>
-              <li>{item.detectors ? item.detectors : "NA"}</li>
-              <li>{item.flp ? item.flp : "NA"}</li>
-              <li>{item.epn ? item.epn : "NA"}</li>
-              <li>{item.timeframes ? item.timeframes : "NA"}</li>
-              <li>{item.subtimeframes ? item.subtimeframes : "NA"}</li>
-              <li>{item.b_read_out ? item.b_read_out : "NA"}</li>
-              <Button variant="primary">Get raw data</Button>
-            </ul>
-          ))
-        ) : (
-          <div>
-            <p>
-              No data is found, select runs at <Link to="/runs">Runs</Link>
-            </p>
-          </div>
-        )}
-      </section>
+      <div className="contentit">
+        <Link to={"/runs"} className="linkies">
+          Go back to all runs
+        </Link>
+
+        <Table
+          variant="dark"
+          striped
+          bordered
+          responsive
+          size="sm"
+          className="mt-5"
+        >
+          <thead>
+            <tr>
+              <th>Compare</th>
+              <th>Run number</th>
+              <th>
+                Time O<sub>2</sub> start
+              </th>
+              <th>
+                Time O<sub>2</sub> end
+              </th>
+              <th>Time TRG start</th>
+              <th>Time TRG end</th>
+              <th>Run ID</th>
+              <th>Run type</th>
+              <th>Run quality</th>
+              <th>Detectors</th>
+              <th>FLP's'</th>
+              <th>EPN</th>
+              <th>Timeframes</th>
+              <th>subtimeframes</th>
+              <th>B read out</th>
+              <th>B timeframe builder</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.data ? (
+              this.props.data.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.run_number ? item.run_number : "NA"}</td>
+                  <td>{item.time02start ? item.time02start : "NA"}</td>
+                  <td>{item.time02end ? item.time02end : "NA"}</td>
+                  <td>{item.timetrgstart ? item.timetrgstart : "NA"}</td>
+                  <td>{item.timetrgend ? item.timetrgend : "NA"}</td>
+                  <td>{item.id ? item.id : "NA"}</td>
+                  <td>{item.run_type ? item.run_type : "NA"}</td>
+                  <td>{item.quality ? item.quality : "NA"}</td>
+                  <td>{item.detectors ? item.detectors : "NA"}</td>
+                  <td>{item.flp ? item.flp : "NA"}</td>
+                  <td>{item.epn ? item.epn : "NA"}</td>
+                  <td>{item.timeframes ? item.timeframes : "NA"}</td>
+                  <td>{item.subtimeframes ? item.subtimeframes : "NA"}</td>
+                  <td>{item.b_read_out ? item.b_read_out : "NA"}</td>
+                  <Button variant="primary">Get raw data</Button>
+                </tr>
+              ))
+            ) : (
+              <div>
+                <p>
+                  No data is found, select runs at <Link to="/runs">Runs</Link>
+                </p>
+              </div>
+            )}
+          </tbody>
+        </Table>
+      </div>
     );
   }
 }
