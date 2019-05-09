@@ -22,9 +22,11 @@ class Logs extends Component {
   componentDidMount = () => {
     this.props.setLoggedInData();
     let self = this;
-    setInterval(() => {
-      self.props.setPushNotificationData({ message: Math.random(0, 1) });
-    }, 1000);
+    // setInterval(() => {
+    //   self.props.setPushNotificationData({
+    //     message: "Denniswegereef added a commment on log 39203"
+    //   });
+    // }, 1000);
   };
 
   handleView = () => {
@@ -48,11 +50,6 @@ class Logs extends Component {
             <Button variant="success" onClick={this.openFilters}>
               Open filters
             </Button>
-            {/* <div className="filters">
-              <Container>
-                <h1>test</h1>
-              </Container>
-            </div> */}
           </Container>
         </div>
 
