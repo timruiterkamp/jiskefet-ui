@@ -10,11 +10,13 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import { setPushNotificationData } from "../store/reducers/data/DataActions";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 class CreateLogs extends Component {
   state = {
     tags: [{ name: "Human" }, { name: "Comment" }],
-    value: ""
+    value: "",
+    redirectToReferrer: false
   };
 
   handleChange = event => {
@@ -30,9 +32,13 @@ class CreateLogs extends Component {
 
   submitLog = msg => {
     this.props.setPushNotificationData({ message: msg });
+    this.setState({ redirectToReferrer: true });
   };
   render() {
     console.log(this.state.tags);
+    if (this.state.redirectToReferrer === true) {
+      return <Redirect to="/logs" />;
+    }
     return (
       <React.Fragment>
         <header className="create-log-header">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import CardSingle from "../components/composites/card";

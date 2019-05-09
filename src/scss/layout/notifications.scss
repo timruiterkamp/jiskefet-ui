@@ -6,23 +6,25 @@
   width: auto;
   padding: 1rem;
   color: white;
+  border-radius: 5px;
 }
 
 .pop-up {
   display: block;
-  animation: 0.3s ease-in-out forwards;
+  animation: popUp 0.5s ease-in-out forwards;
   position: fixed;
   // bottom: -100vh;
+  bottom: 10px;
   right: 10px;
 }
 
 @keyframes popUp {
   0% {
-    transform: translateY(-100vh);
+    transform: translateY(100vh);
     opacity: 0;
   }
   100% {
-    transform: translateY(-100vh);
+    transform: translateY(0);
     opacity: 1;
   }
 }
