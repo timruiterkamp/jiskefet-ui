@@ -19,8 +19,10 @@ class Routes extends Component {
   componentDidMount = () => {
     let self = this;
     setInterval(() => {
-      self.props.setPushNotificationData({ message: Math.random(0, 1) });
-    }, 1000);
+      self.props.setPushNotificationData({
+        message: ' message: "Denniswegereef added a commment on log 39203"'
+      });
+    }, 3000);
   };
 
   render() {

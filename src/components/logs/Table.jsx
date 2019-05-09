@@ -10,7 +10,7 @@ export default function TableSingle() {
     <React.Fragment>
       <div>
         <Col sm={12}>
-          <Table striped bordered hover size="sm">
+          <Table variant="dark" striped bordered hover size="sm">
             <thead>
               <tr>
                 <th>Log id</th>
@@ -64,7 +64,7 @@ export default function TableSingle() {
         </Col>
 
         <Col sm={12}>
-          <Pagination>
+          <Pagination variant="dark">
             <Pagination.First />
             <Pagination.Prev />
             <Pagination.Item active>{1}</Pagination.Item>
