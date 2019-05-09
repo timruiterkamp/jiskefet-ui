@@ -1,3 +1,24 @@
+@import "../config/colors.scss";
+
+.contentit {
+  margin-top: 50px;
+}
+
+section {
+  background-color: $slightlyLighterBlack;
+  min-height: 100vh;
+}
+
+.linkies {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+table {
+  margin-left: 100px;
+}
 .compare {
   display: flex;
   flex-direction: row;
