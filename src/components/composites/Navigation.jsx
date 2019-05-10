@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import { User, Activity, Play, Layers, Sun, Moon } from "react-feather";
+import { setModusData } from "../../store/reducers/data/DataActions";
+import { connect } from "react-redux";
 
-export default class Navigation extends Component {
+class Navigation extends Component {
   state = {
     navOpen: false,
     dark: true
@@ -17,8 +19,13 @@ export default class Navigation extends Component {
   setModus = modus => {
     if (modus === "dark") {
       this.setState({ dark: false });
+      this.props.setModusData("light");
+      document.querySelector("body").style.filter =
+        "invert(1) hue-rotate(320deg)";
     } else {
       this.setState({ dark: true });
+      this.props.setModusData("dark");
+      document.querySelector("body").style = "";
     }
   };
   render() {
@@ -62,3 +69,14 @@ export default class Navigation extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {
+  setModusData
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Navigation);
