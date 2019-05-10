@@ -16,15 +16,15 @@ class PushNotification extends Component {
     if (prevProps.notification != this.props.notification) {
       console.log(this.props.notification);
     }
-    let self = this;
-    setTimeout(() => {
-      self.state.showPopUp = false;
-    }, 1000);
   };
   render() {
     return (
       <div
-        className={this.props.notification ? "pop-up element" : "element hide"}
+        className={
+          this.props.notification && this.state.showPopUp
+            ? "pop-up element"
+            : "element hide"
+        }
       >
         <div className="pushNotification">
           {this.props.notification && <p>{this.props.notification.message}</p>}
