@@ -12,9 +12,37 @@ header.create-log-header {
   }
 }
 
+input[type="submit"]:not(:disabled) {
+  padding: 0.5rem 0.7rem;
+  background-color: #007bff;
+  border: none;
+  margin-left: 10px;
+  color: #fff;
+  border-radius: 6px;
+}
+
+input[type="file" i] {
+  padding: 0.5rem 0.7rem;
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  width: 260px;
+}
+.col-sm-4 {
+  button {
+    &:last-child {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
 .tags {
   margin-top: -63px;
   padding-bottom: 25px;
+  @media only screen and (max-width: 768px) {
+    margin-top: 0;
+  }
 
   ul {
     list-style-type: none;
