@@ -44,7 +44,7 @@ class CreateLogs extends Component {
         <header className="create-log-header">
           <Container>
             <Row>
-              <Col sm={12}>
+              <Col md={12} sm={12}>
                 <h3>Create a log</h3>
               </Col>
               <Col sm={8}>
@@ -62,12 +62,12 @@ class CreateLogs extends Component {
               </Col>
             </Row>
             <Row>
-              <Col sm={8}>
+              <Col md={8} sm={12}>
                 <Editor wrapperClassName="demo-wrapper" />
 
                 <textarea />
               </Col>
-              <Col sm={4}>
+              <Col md={4} sm={12}>
                 <div className="tags">
                   <h3>Tags</h3>
                   <ul>
