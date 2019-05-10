@@ -2,7 +2,8 @@ const initialState = {
   loading: false,
   loggedIn: false,
   compareItems: [],
-  pushNotification: null
+  pushNotification: null,
+  modus: "dark"
 };
 
 export const DataReducer = (state = initialState, action) => {
@@ -26,6 +27,11 @@ export const DataReducer = (state = initialState, action) => {
       return {
         ...state,
         compareItems: action.value
+      };
+    case "SET_MODUS":
+      return {
+        ...state,
+        modus: action.value
       };
     default:
       return state;

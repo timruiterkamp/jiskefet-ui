@@ -13,3 +13,7 @@ export const compareItemsState = state => {
 export const pushNotificationState = state => {
   return state.data.pushNotification;
 };
+
+export const modusState = state => {
+  return state.data.modus;
+};

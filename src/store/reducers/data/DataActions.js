@@ -25,6 +25,13 @@ function setCompareItems(value) {
   };
 }
 
+function setModus(value) {
+  return {
+    type: "SET_MODUS",
+    value
+  };
+}
+
 export const setLoadingData = () => dispatch => {
   dispatch(setLoading(true));
 };
@@ -34,11 +41,14 @@ export const setLoggedInData = () => dispatch => {
 };
 
 export const setCompareItemsData = item => dispatch => {
-  console.log(item);
   dispatch(setCompareItems(item));
 };
 
 export const setPushNotificationData = data => dispatch => {
-  console.log(data);
   dispatch(setPushNotification(data));
+};
+
+export const setModusData = data => dispatch => {
+  console.log(data);
+  dispatch(setModus(data));
 };
