@@ -8,9 +8,37 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "../scss/layout/create-log.scss";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import { setPushNotificationData } from "../store/reducers/data/DataActions";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-export default class CreateLogs extends Component {
+class CreateLogs extends Component {
+  state = {
+    tags: [{ name: "Human" }, { name: "Comment" }],
+    value: "",
+    redirectToReferrer: false
+  };
+
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.state.tags.push({ name: this.state.value });
+    this.setState({ value: "" });
+    this.forceUpdate();
+  };
+
+  submitLog = msg => {
+    this.props.setPushNotificationData({ message: msg });
+    this.setState({ redirectToReferrer: true });
+  };
   render() {
+    console.log(this.state.tags);
+    if (this.state.redirectToReferrer === true) {
+      return <Redirect to="/logs" />;
+    }
     return (
       <React.Fragment>
         <header className="create-log-header">
@@ -37,17 +65,34 @@ export default class CreateLogs extends Component {
               <Col sm={8}>
                 <Editor wrapperClassName="demo-wrapper" />
 
-                <textarea value="input" />
+                <textarea />
               </Col>
               <Col sm={4}>
+                <div className="tags">
+                  <h3>Tags</h3>
+                  <ul>
+                    {this.state.tags.map((tag, index) => (
+                      <li key={index}>{tag.name}</li>
+                    ))}
+                  </ul>
+                  <h4>Add tags</h4>
+                  <form onSubmit={this.handleSubmit}>
+                    <input
+                      type="text"
+                      value={this.state.value}
+                      onChange={this.handleChange}
+                    />
+                    <input type="submit" value="Submit" />
+                  </form>
+                </div>
                 <p>Add a attachments</p>
                 <input type="file" />
-                <Button variant="secondary mt-2">Submit</Button>
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={3}>
-                <h2>asdf</h2>
+                <Button
+                  variant="secondary mt-2"
+                  onClick={() => this.submitLog("Dennis submitted a new log")}
+                >
+                  Submit
+                </Button>
               </Col>
             </Row>
           </Container>
@@ -56,3 +101,14 @@ export default class CreateLogs extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {
+  setPushNotificationData
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CreateLogs);
